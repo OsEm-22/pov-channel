@@ -1,0 +1,457 @@
+:root {
+  --bg-color: #9a031e;
+  --primary-color: #fb8b24;
+  --secondary-color: #e36414;
+  --third-color: #5f0f40;
+  --jic-color: #0a414e;
+  --white: #ffffff;
+  --text-muted: #e7e7e7;
+  --primary-font: "Kanit", sans-serif;
+  --gradient-bg: linear-gradient(120deg, #fa5c7f, #717bf9, #5ef0d9);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--primary-font);
+}
+
+html::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* html::-webkit-scrollbar-track {
+  background: var(--bg-color);
+} */
+
+html::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5rem;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+body {
+  color: var(--white);
+  background-color: var(--bg-color);
+}
+
+/* NAVBAR SECTION */
+
+.navbar {
+  color: var(--secondary-color);
+  background-color: #000;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1.2rem 1rem 0 1rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 1.7rem;
+  font-weight: 700;
+  user-select: none;
+  margin-bottom: 1rem;
+}
+
+.navbar .tabs {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  column-gap: 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.list-items {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.list-items a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0.11rem;
+  bottom: -0.3rem;
+  left: 0;
+  transition: 0.5s;
+}
+
+.list-items a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.11rem;
+  background: var(--gradient-bg);
+  bottom: -0.3rem;
+  left: 0;
+}
+
+.btn {
+  background-color: var(--jic-color);
+  color: var(--primary-color) !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+}
+
+.btn:hover {
+  transform: translate(0, 0.1rem);
+  color: var(--primary-color);
+  background-color: var(--third-color);
+}
+
+/* HERO SECTION */
+main .container {
+  color: var(--white);
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container img {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(1.5);
+}
+
+.heading-text {
+  margin-left: 4rem;
+}
+
+.heading-text h1 {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.heading-text .play lord-icon {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  width: 7rem;
+  height: 7rem;
+}
+
+/* MOVIES SECTION */
+.movies-header {
+  max-width: 968px;
+  margin: 2.5rem auto 1rem;
+  text-align: center;
+  border-bottom: 0.2rem solid var(--primary-color);
+  text-transform: uppercase;
+}
+
+.movies-header h2 {
+  letter-spacing: 1rem;
+}
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.movies-box {
+  width: 100%;
+  height: 100%;
+}
+
+.movies-box .poster img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  filter: brightness(0.9);
+  transition: 0.5s;
+}
+
+.movies-box .poster img:hover {
+  filter: brightness(1);
+  transform: translateY(-0.2rem) scale(0.98);
+}
+
+.movies-box h3 {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.movies-box span {
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* CONTACT FORM */
+
+#contact .contact-header {
+  color: var(--white);
+  letter-spacing: 0.5rem;
+  max-width: 687px;
+  margin: 2rem auto 0;
+  text-align: center;
+  border-bottom: 0.1rem solid var(--primary-color);
+}
+
+#contact form {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
+#contact form .email {
+  position: relative;
+  width: 20rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+}
+
+#contact form input[type="email"] {
+  font-size: 0.9rem;
+  color: var(--bg-color);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+}
+
+#contact form input[type="submit"] {
+  border: none;
+  outline: none;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* SOCIAL SECTION */
+
+#social .social-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  user-select: none;
+}
+
+.social-container .social-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-container .social-left p {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.social-container .social-right a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+.social-container .social-right a i {
+  transition: 0.3s;
+}
+
+.social-container .social-right a i:hover {
+  color: var(--primary-color);
+  transform: translateY(-0.1rem);
+}
+
+footer .copyright {
+  margin: auto;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+footer .copyright strong {
+  font-size: 0.6rem;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+.copyright strong a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  /* #home .container h1 {
+    font-size: 2rem;
+  } */
+  #home .container .heading-text {
+    margin-left: 1.5rem;
+  }
+  #home .container .play lord-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+  .movies-header h2 {
+    font-size: 1rem;
+  }
+  #contact .contact-header {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 666px) {
+  /* #home .container {
+    min-height: 530px;
+  } */
+  #home .container h1 {
+    font-size: 1.5rem;
+  }
+  #home .container .play lord-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  .social-container .social-left p {
+    font-size: 1.5rem;
+  }
+  .social-container .social-right a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 605px) {
+  /* #home .container {
+    min-height: 530px;
+  } */
+  #home .container h1 {
+    font-size: 1.5rem;
+  }
+  #home .container .play lord-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  .container .heading-text {
+    margin-left: 1rem;
+  }
+  #social .social-container {
+    display: block;
+    margin: auto;
+  }
+  .social-container .social-left {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .social-container .social-right {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #contact .contact-header {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 572px) {
+  /* #home .container {
+    min-height: 580px;
+  } */
+  .navbar .brand {
+    font-size: 1rem;
+  }
+  .navbar .tabs .list-items a {
+    font-size: 0.8rem;
+  }
+  .navbar .btn {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .movies-header h2 {
+    font-size: 0.8rem;
+  }
+  .contact-header {
+    font-size: 0.8rem;
+  }
+  .movies-container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  /* #home .container {
+    min-height: 520px;
+  } */
+  #home .container h1 {
+    font-size: 1rem;
+  }
+  #home .container span {
+    font-size: 0.8rem;
+  }
+  .movies-header h2 {
+    letter-spacing: 0.5rem;
+  }
+  .social-container .social-left p {
+    font-size: 1.3rem;
+  }
+  .social-container .social-right a {
+    font-size: 1.3rem;
+  }
+  #contact form .email {
+    width: 15rem;
+  }
+  #contact form input[type="submit"] {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* #home .container {
+    min-height: 500px;
+  } */
+  #home .container h1 {
+    font-size: 1.3rem;
+  }
+  #home .container span {
+    font-size: 1rem;
+  }
+  .social-container .social-left p {
+    font-size: 1.3rem;
+  }
+  .social-container .social-right a {
+    font-size: 1.3rem;
+  }
+  #contact .contact-header {
+    font-size: 0.8rem;
+    letter-spacing: 0.4rem;
+  }
+}
